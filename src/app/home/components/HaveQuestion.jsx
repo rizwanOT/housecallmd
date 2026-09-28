@@ -1,8 +1,7 @@
 'use client';
 
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
-import Button from '../../components/ui/Button';
+import { Phone } from 'lucide-react';
 
 const HaveQuestion = () => {
   return (
@@ -26,9 +25,9 @@ const HaveQuestion = () => {
           {/* Main Content - Centered */}
           <div className="text-white space-y-6 max-w-4xl">
             <div className="space-y-4">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-white">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-white">
                 Have a Question or Need Help?
-              </h1>
+              </h2>
               <p className="text-base sm:text-lg text-white max-w-3xl leading-relaxed">
               Feel free to get in touch with us at any time, and we'll be delighted to assist you. Whether you have inquiries about our services, need to schedule an appointment, or require support, HouseCall MD is here to meet your healthcare needs.
               </p>
@@ -36,14 +35,13 @@ const HaveQuestion = () => {
 
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 pb-4">
-              <Button
-                href="#"
-                variant="primary"
-                size="lg"
-                icon={<ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />}
+              <a
+                href="tel:+16267654321"
+                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold rounded-full bg-green-700 hover:bg-[#0072BC] text-white shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-all duration-200"
               >
                 Call or Text: 626-765-4321
-              </Button>
+                <Phone className="w-5 h-5 ml-2" aria-hidden="true" />
+              </a>
             </div>
           </div>
         </div>

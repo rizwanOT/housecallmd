@@ -90,7 +90,7 @@ const Services = () => {
                 <div className="w-16 h-16 bg-green-500 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-300 transition-colors duration-300 overflow-hidden">
                   <Image
                     src={service.logo}
-                    alt={service.title}
+                    alt=""
                     width={40}
                     height={40}
                     unoptimized

@@ -26,9 +26,9 @@ const Hero = () => {
           {/* Main Content - Centered */}
           <div className="text-white space-y-6 sm:space-y-8 max-w-4xl">
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-base sm:text-lg md:text-xl font-medium tracking-wide">
+              <p className="text-base sm:text-lg md:text-xl font-medium tracking-wide">
                 Welcome to HouseCall MD
-              </h2>
+              </p>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 We Put the{' '}
                 <span className="text-green-400">Care</span>

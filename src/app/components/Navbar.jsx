@@ -69,10 +69,11 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav 
+    <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-[#0072BC]/90' 
+        isScrolled
+          ? 'bg-[#0072BC]/90'
           : 'bg-[#0072BC]'
       }`}
     >
@@ -122,18 +123,20 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white hover:text-green-400 transition-colors duration-200 p-2"
-              aria-label="Toggle mobile menu"
+              className="text-white hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-white rounded transition-colors duration-200 p-2"
+              aria-label={isMenuOpen ? 'Close main menu' : 'Open main menu'}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen 
-            ? 'max-h-96 opacity-100 visible' 
+        <div id="mobile-menu" className={`lg:hidden transition-all duration-300 ease-in-out ${
+          isMenuOpen
+            ? 'max-h-96 opacity-100 visible'
             : 'max-h-0 opacity-0 invisible'
         }`}>
             <div className="pb-3 sm:pb-4 space-y-2">

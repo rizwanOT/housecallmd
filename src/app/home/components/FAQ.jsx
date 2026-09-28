@@ -78,9 +78,9 @@ const FAQ = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h3 className="text-sm font-semibold text-green-500 uppercase tracking-widest mb-4">
+          <p className="text-sm font-semibold text-green-700 uppercase tracking-widest mb-4">
             F A Q
-          </h3>
+          </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#17224D] mb-4 sm:mb-6">
             Frequently Asked Questions
           </h2>
@@ -96,9 +96,12 @@ const FAQ = () => {
               {/* Question Bar */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between transition-all duration-500 ease-in-out ${
-                  openIndex === index 
-                    ? 'bg-green-50 border-green-200' 
+                id={`faq-question-${index}`}
+                aria-expanded={openIndex === index}
+                aria-controls={`faq-answer-${index}`}
+                className={`w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-700 transition-all duration-500 ease-in-out ${
+                  openIndex === index
+                    ? 'bg-green-50 border-green-200'
                     : 'bg-gray-50 hover:bg-gray-100'
                 }`}
               >
@@ -107,18 +110,22 @@ const FAQ = () => {
                 </span>
                 <div className="flex-shrink-0 ml-4 transition-all duration-500 ease-in-out transform">
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-green-500 transition-all duration-500 ease-in-out transform rotate-0" />
+                    <ChevronUp className="w-5 h-5 text-green-700 transition-all duration-500 ease-in-out transform rotate-0" aria-hidden="true" />
                   ) : (
-                    <HelpCircle className="w-5 h-5 text-gray-500 transition-all duration-500 ease-in-out transform rotate-0" />
+                    <HelpCircle className="w-5 h-5 text-gray-500 transition-all duration-500 ease-in-out transform rotate-0" aria-hidden="true" />
                   )}
                 </div>
               </button>
 
               {/* Answer with smooth height animation */}
-              <div 
+              <div
+                id={`faq-answer-${index}`}
+                role="region"
+                aria-labelledby={`faq-question-${index}`}
+                hidden={openIndex !== index}
                 className={`overflow-hidden transition-all duration-700 ease-in-out ${
-                  openIndex === index 
-                    ? 'max-h-96 opacity-100' 
+                  openIndex === index
+                    ? 'max-h-96 opacity-100'
                     : 'max-h-0 opacity-0'
                 }`}
               >

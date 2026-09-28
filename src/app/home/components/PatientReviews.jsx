@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Pause, Play } from 'lucide-react';
 
 // This component displays a patient review section with a carousel-like layout.
 // It is designed to be fully responsive using Tailwind CSS.
@@ -9,6 +10,7 @@ import Image from 'next/image';
 
 const PatientReviews = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   // Create individual reviews for mobile (1 per slide) and sets for desktop (3 per slide)
   const allReviews = [
@@ -101,14 +103,22 @@ const PatientReviews = () => {
     setCurrentSlide(index);
   };
 
-  // Auto-advance slides every 5 seconds
+  // Auto-advance slides every 5 seconds, unless paused or the user prefers reduced motion
   useEffect(() => {
+    if (isPaused) return;
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [currentSlide, isMobile]);
+  }, [currentSlide, isMobile, isPaused]);
 
   const totalSlides = isMobile ? allReviews.length : reviewSets.length;
 
@@ -118,7 +128,7 @@ const PatientReviews = () => {
       <div className="absolute inset-0 z-0 h-full">
         <Image
           src="/assets/11/Memphis_bg.png"
-          alt="Memphis background pattern"
+          alt=""
           fill
           className="object-contain w-full"
           sizes="100vw"
@@ -127,7 +137,7 @@ const PatientReviews = () => {
       
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Section Header */}
-        <h3 className="text-sm font-semibold text-green-500 uppercase tracking-widest mb-2">PATIENT REVIEWS</h3>
+        <p className="text-sm font-semibold text-green-700 uppercase tracking-widest mb-2">PATIENT REVIEWS</p>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#17224D] mb-8 sm:mb-12">What They Say</h2>
 
         {/* Reviews Carousel */}
@@ -162,9 +172,9 @@ const PatientReviews = () => {
                         <div className="w-16 h-16 bg-black rounded-full mx-auto mb-4"></div>
                         
                         {/* Name and Role */}
-                        <h4 className="text-lg font-semibold text-gray-800 mb-1">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-1">
                           {reviewItem.name}
-                        </h4>
+                        </h3>
                         <p className="text-gray-500 text-sm mb-6">
                           {reviewItem.role}
                         </p>
@@ -197,9 +207,9 @@ const PatientReviews = () => {
                           <div className="w-12 h-12 sm:w-16 sm:h-16 bg-black rounded-full mx-auto mb-3 sm:mb-4"></div>
                           
                           {/* Name and Role */}
-                          <h4 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">
+                          <h3 className="text-base sm:text-lg font-semibold text-gray-800 mb-1">
                             {reviewItem.name}
-                          </h4>
+                          </h3>
                           <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">
                             {reviewItem.role}
                           </p>
@@ -235,18 +245,26 @@ const PatientReviews = () => {
           </button>
         </div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center mt-8 space-x-3">
+        {/* Pagination Dots + pause control */}
+        <div className="flex justify-center items-center mt-8 space-x-3">
+          <button
+            onClick={() => setIsPaused((prev) => !prev)}
+            className="mr-1 p-1.5 rounded-full text-[#17224D] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-700"
+            aria-label={isPaused ? 'Play automatic review rotation' : 'Pause automatic review rotation'}
+          >
+            {isPaused ? <Play className="w-4 h-4" aria-hidden="true" /> : <Pause className="w-4 h-4" aria-hidden="true" />}
+          </button>
           {Array.from({ length: totalSlides }, (_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === currentSlide 
-                  ? 'bg-[#17224D] scale-125 rounded-full' 
+              className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-1 ${
+                index === currentSlide
+                  ? 'bg-[#17224D] scale-125 rounded-full'
                   : 'bg-gray-400 hover:bg-gray-600 rounded-full'
               }`}
               aria-label={`Go to review ${index + 1}`}
+              aria-current={index === currentSlide ? 'true' : undefined}
             />
           ))}
         </div>

@@ -12,12 +12,12 @@ const PrivacyPolicy = () => {
 
       {/* Main content area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#17224D] mb-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#17224D] mb-4">
           Privacy Policy
-        </h2>
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        </h1>
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           TERMS OF USE
-        </p>
+        </h2>
         <p>
           HouseCall MD (“we,” “us,” or “our”) provides this
           website (“Site”) to you conditioned on your acceptance without
@@ -26,18 +26,18 @@ const PrivacyPolicy = () => {
           conditions, and notices.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           MODIFICATIONS OF THESE TERMS OF USE
-        </p>
+        </h2>
         <p>
           We reserve the right to change the terms, conditions, and notices
           under which this Site is offered, including but not limited to the
           charges associated with the use of this Site.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           LINKS TO THIRD PARTY SITES
-        </p>
+        </h2>
         <p>
           This Site may contain links to other websites (“Linked Sites”). The
           Linked Sites are not under our control, and we are not responsible for
@@ -50,9 +50,9 @@ const PrivacyPolicy = () => {
           operators.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           NO UNLAWFUL OR PROHIBITED USE
-        </p>
+        </h2>
         <p>
           As a condition of your use of this Site, you warrant to us that you
           will not use this Site for any purpose that is unlawful or prohibited
@@ -64,9 +64,9 @@ const PrivacyPolicy = () => {
           provided for through this Site.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           CONTENT YOU SUBMIT
-        </p>
+        </h2>
         <p>
           When using this Site, you may have the opportunity to submit reviews
           or feedback regarding your experiences with us, and to participate in
@@ -169,9 +169,9 @@ const PrivacyPolicy = () => {
           your own review from this Site, please contact us.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           LIABILITY DISCLAIMER
-        </p>
+        </h2>
         <p>
           THE INFORMATION, SOFTWARE, PRODUCTS, AND SERVICES INCLUDED IN OR
           AVAILABLE THROUGH THIS SITE MAY INCLUDE INACCURACIES OR TYPOGRAPHICAL
@@ -209,9 +209,9 @@ const PrivacyPolicy = () => {
           SOLE AND EXCLUSIVE REMEDY IS TO DISCONTINUE USING THIS SITE.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           COPYRIGHT AND TRADEMARK NOTICES
-        </p>
+        </h2>
         <p>
           All contents of this website are Copyright © 2025 HouseCall MD. All Rights Reserved. All logos are trademarks and service
           marks of HouseCall MD. All other trademarks, service
@@ -219,9 +219,9 @@ const PrivacyPolicy = () => {
           owners.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           TRADEMARKS
-        </p>
+        </h2>
         <p>
           The names of actual companies and products mentioned herein may be the
           trademarks of their respective owners. The example companies,
@@ -231,14 +231,14 @@ const PrivacyPolicy = () => {
           rights not expressly granted herein are reserved.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           NOTICES
-        </p>
+        </h2>
         <p>Please contact us by phone at 310-853-1739.</p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           PRIVACY POLICY STATEMENT
-        </p>
+        </h2>
         <p>
           We are committed to protecting your privacy and providing a safe
           online experience. This Privacy Statement applies to our Practice’s
@@ -247,9 +247,9 @@ const PrivacyPolicy = () => {
           Privacy Statement.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Collection of your Personal Information
-        </p>
+        </h2>
         <p>
           This Practice collects personally identifiable information provided by
           you, such as your e-mail address, name, home or work address or
@@ -272,9 +272,9 @@ const PrivacyPolicy = () => {
           other websites.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Use of your Personal Information
-        </p>
+        </h2>
         <p>
           This Practice collects and uses your personal information to operate
           the website and deliver the services you have requested. This Practice
@@ -295,9 +295,9 @@ const PrivacyPolicy = () => {
           without notice, only if required to do so by law.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Use of Cookies
-        </p>
+        </h2>
         <p>
           The website uses “cookies” to help this Practice personalize your
           online experience. A cookie is a text file that is placed on your hard
@@ -307,9 +307,9 @@ const PrivacyPolicy = () => {
           cookie to you.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Security of your Personal Information
-        </p>
+        </h2>
         <p>
           This Practice secures your personal information from unauthorized
           access, use or disclosure. This Practice secures the personally
@@ -320,9 +320,9 @@ const PrivacyPolicy = () => {
           use of encryption, such as the Secure Socket Layer (SSL) protocol.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Changes to this Statement
-        </p>
+        </h2>
         <p>
           This Practice will occasionally update this Privacy Statement to
           reflect company and customer feedback. We encourage you to
@@ -330,9 +330,9 @@ const PrivacyPolicy = () => {
           Practice is protecting your information.
         </p>
 
-        <p className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
+        <h2 className="text-md sm:text-xl md:text-md font-semibold text-[#17224D] mt-6 mb-2">
           Contact Information
-        </p>
+        </h2>
         <p>Please contact us by phone at 310-853-1739.</p>
       </div>
     </>
