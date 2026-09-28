@@ -1,5 +1,6 @@
 import Breadcrumbs from "../components/Breadcrumbs";
 import { MapPin, Mail, Clock, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import ContactAppointmentForm from "./ContactAppointmentForm";
 
 export default function Contact() {
   return (
@@ -23,12 +24,12 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
             {/* Left side - Content */}
             <div className="space-y-4 sm:space-y-6">
-              <h2 className="text-base sm:text-lg font-semibold text-green-600 uppercase tracking-wide">
+              <p className="text-base sm:text-lg font-semibold text-green-700 uppercase tracking-wide">
                 GET IN TOUCH
-              </h2>
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#17224D] leading-tight">
+              </p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#17224D] leading-tight">
                 Get in Touch with HouseCall MD
-              </h3>
+              </h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 Let us help you take the first step towards a healthier and
                 happier life. Reach out to us today to schedule a visit, ask
@@ -43,10 +44,10 @@ export default function Contact() {
               {/* Location Card */}
               <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col items-center text-center">
-                  <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mb-3 sm:mb-4" />
-                  <h4 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
+                  <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-green-700 mb-3 sm:mb-4" aria-hidden="true" />
+                  <h3 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
                     Location
-                  </h4>
+                  </h3>
                   <p className="text-gray-700 text-xs sm:text-sm">
                     1171 S. Robertson Blvd, Suite 242, Los Angeles, CA 90035
                   </p>
@@ -56,21 +57,21 @@ export default function Contact() {
               {/* Email Card */}
               <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col items-center text-center">
-                  <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mb-3 sm:mb-4" />
-                  <h4 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
+                  <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-green-700 mb-3 sm:mb-4" aria-hidden="true" />
+                  <h3 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
                     Email Us
-                  </h4>
-                  <p className="text-gray-700 text-xs sm:text-sm">info@housecallmd.com</p>
+                  </h3>
+                  <a href="mailto:info@housecallmd.com" className="text-gray-700 text-xs sm:text-sm hover:underline break-words">info@housecallmd.com</a>
                 </div>
               </div>
 
               {/* Operating Hours Card */}
               <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col items-center text-center">
-                  <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mb-3 sm:mb-4" />
-                  <h4 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
+                  <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-green-700 mb-3 sm:mb-4" aria-hidden="true" />
+                  <h3 className="text-lg sm:text-xl font-bold text-[#17224D] mb-2">
                     Operating Hours
-                  </h4>
+                  </h3>
                   <p className="text-gray-700 text-xs sm:text-sm">Open 24 Hours (Daily)</p>
                 </div>
               </div>
@@ -78,9 +79,9 @@ export default function Contact() {
               {/* Call Us Card */}
               <div className="bg-[#0072BC] rounded-lg shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col items-center text-center">
-                  <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-3 sm:mb-4" />
-                  <h4 className="text-lg sm:text-xl font-bold text-white mb-2">Call Us</h4>
-                  <p className="text-white text-xs sm:text-sm">626-765-4321</p>
+                  <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-white mb-3 sm:mb-4" aria-hidden="true" />
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Call Us</h3>
+                  <a href="tel:+16267654321" className="text-white text-xs sm:text-sm hover:underline">626-765-4321</a>
                 </div>
               </div>
             </div>
@@ -105,47 +106,12 @@ export default function Contact() {
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-10">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
              {/* Book an Appointment Section */}
-             <div className="bg-white rounded-lg shadow-lg p-8">
-               <h3 className="text-2xl font-bold text-[#17224D] mb-6">Book an Appointment</h3>
-               <form className="space-y-4">
-                 <input
-                   type="text"
-                   placeholder="Name"
-                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                 />
-                 <input
-                   type="email"
-                   placeholder="Email"
-                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                 />
-                 <input
-                   type="tel"
-                   placeholder="Phone"
-                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
-                 />
-                 <div className="flex items-start space-x-3">
-                   <input
-                     type="checkbox"
-                     id="consent"
-                     className="mt-1 h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-                   />
-                   <label htmlFor="consent" className="text-sm text-gray-700 leading-relaxed">
-                     By checking this box, you agree to receive text messages from HouseCall MD related to medical appointments and services at the phone number provided above. You may reply STOP to opt-out at any time. For assistance reply HELP. Message and data rates may apply. Message frequency may vary. Learn more on our Privacy Policy page.
-                   </label>
-                 </div>
-                 <button
-                   type="submit"
-                   className="w-full bg-green-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"
-                 >
-                   Submit
-                 </button>
-               </form>
-             </div>
+             <ContactAppointmentForm />
 
              {/* Insurance Partners Section */}
              <div className="pt-30">
                <div className="space-y-6">
-                 <h3 className="text-2xl font-bold text-[#17224D] mb-4">Proudly Partnered with Leading Healthcare Providers</h3>
+                 <h2 className="text-2xl font-bold text-[#17224D] mb-4">Proudly Partnered with Leading Healthcare Providers</h2>
                  <p className="text-gray-700">
                    We accept most insurance plans. If you have specific questions regarding your coverage, please contact the office for more information.
                  </p>
@@ -209,12 +175,12 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Headings */}
           <div className="text-center mb-12">
-            <h2 className="text-lg font-semibold text-green-600 uppercase tracking-wide mb-2">
+            <p className="text-lg font-semibold text-green-700 uppercase tracking-wide mb-2">
               SERVING
-            </h2>
-            <h3 className="text-4xl font-bold text-[#17224D] leading-tight">
+            </p>
+            <h2 className="text-4xl font-bold text-[#17224D] leading-tight">
               We are now serving
-            </h3>
+            </h2>
           </div>
 
           {/* Map and Service Areas */}
@@ -230,7 +196,7 @@ export default function Contact() {
 
             {/* Right side - Service Areas List */}
             <div className="space-y-6">
-              <h4 className="text-2xl font-bold text-[#17224D] mb-6">Service Areas</h4>
+              <h3 className="text-2xl font-bold text-[#17224D] mb-6">Service Areas</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Left Column */}
                 <div className="space-y-3">
@@ -311,47 +277,53 @@ export default function Contact() {
              <div className="absolute inset-0 z-0 mx-auto max-w-4xl h-full">
                <img
                  src="/assets/11/Memphis_bg.png"
-                 alt="Memphis background pattern"
+                 alt=""
                  className="w-full h-full object-contain"
                />
              </div>
              
              {/* Content */}
              <div className="relative z-10">
-               <h3 className="text-sm font-semibold text-green-500 uppercase tracking-widest mb-2">
-                 GET IN CONNECT
-               </h3>
+               <p className="text-sm font-semibold text-green-700 uppercase tracking-widest mb-2">
+                 GET CONNECTED
+               </p>
                <h2 className="text-3xl md:text-4xl font-bold text-[#17224D] mb-8">
                  Follow our Social Media
                </h2>
-               
+
                {/* Social Media Icons */}
                <div className="flex justify-center space-x-6">
                  {/* Facebook */}
-                 <a 
-                   href="#" 
-                   className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                   aria-label="Follow us on Facebook"
+                 <a
+                   href="https://facebook.com/housecallmd"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                   aria-label="Follow HouseCall MD on Facebook (opens in a new tab)"
                  >
-                   <Facebook className="w-6 h-6 text-white" />
+                   <Facebook className="w-6 h-6 text-white" aria-hidden="true" />
                  </a>
-                 
+
                  {/* Instagram */}
-                 <a 
-                   href="#" 
-                   className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                   aria-label="Follow us on Instagram"
+                 <a
+                   href="https://instagram.com/housecallmd"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                   aria-label="Follow HouseCall MD on Instagram (opens in a new tab)"
                  >
-                   <Instagram className="w-6 h-6 text-white" />
+                   <Instagram className="w-6 h-6 text-white" aria-hidden="true" />
                  </a>
-                 
+
                  {/* LinkedIn */}
-                 <a 
-                   href="#" 
-                   className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                   aria-label="Follow us on LinkedIn"
+                 <a
+                   href="https://linkedin.com/company/housecallmd"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                   aria-label="Follow HouseCall MD on LinkedIn (opens in a new tab)"
                  >
-                   <Linkedin className="w-6 h-6 text-white" />
+                   <Linkedin className="w-6 h-6 text-white" aria-hidden="true" />
                  </a>
                </div>
              </div>

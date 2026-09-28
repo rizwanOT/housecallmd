@@ -35,6 +35,15 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Breadcrumbs currentPage="About" />
         </div>
+
+        {/* Full-width gray section */}
+        <div className="w-full bg-gray-100 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[72px] font-bold text-[#17224D]">About</h1>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Above Subsection Content */}
@@ -45,7 +54,7 @@ export default function About() {
              <div className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 w-20 h-20 sm:w-32 sm:h-32 z-0 bg-blue-100 rounded-full opacity-50"></div>
              <img
                src="/assets/11/Pattern.png"
-               alt="Pattern"
+               alt=""
                className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 w-20 h-20 sm:w-32 sm:h-32 object-contain z-0"
              />
              <img
@@ -57,12 +66,12 @@ export default function About() {
 
           {/* Right side - Content */}
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="text-base sm:text-lg font-semibold text-green-600 uppercase tracking-wide">
+            <p className="text-base sm:text-lg font-semibold text-green-700 uppercase tracking-wide">
               ABOUT HOUSECALL MD
-            </h2>
-            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#17224D] leading-tight">
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#17224D] leading-tight">
               At HouseCall MD, we are dedicated
-            </h3>
+            </h2>
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
               to delivering exceptional medical services with a focus on
               building strong relationships and providing personalized care. Our
@@ -88,11 +97,11 @@ export default function About() {
               focus on your health in the comfort of your own home. We take
               pride in serving individuals and families in the community,
               providing a seamless healthcare experience that promotes overall
-              well-being and improves your quality of life. At HouseCaIl MD, you
+              well-being and improves your quality of life. At HouseCall MD, you
               are not just a patient: you are a partner on your healthcare
               journey. We value your trust and strive to exceed your
               expectations by delivering exceptional care with empathy,
-              compassion, and respect. We invite you to experience the HouseCaIl
+              compassion, and respect. We invite you to experience the HouseCall
               MD difference. Speak with an intake specialist to see how we can
               best serve you and/or your loved one.
             </p>
@@ -118,12 +127,12 @@ export default function About() {
                <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 max-w-5xl mx-auto -mt-8 sm:-mt-12 lg:-mt-16 relative z-10 animate-slide-up">
                 {/* Values Section */}
                 <div className="mb-8 sm:mb-12 text-center">
-                  <h2 className="text-base sm:text-lg font-semibold text-green-600 uppercase tracking-wide mb-2">
-                    OUR VALUE
-                  </h2>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[#17224D] mb-4 sm:mb-6">
+                  <p className="text-base sm:text-lg font-semibold text-green-700 uppercase tracking-wide mb-2">
+                    OUR VALUES
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-[#17224D] mb-4 sm:mb-6">
                     Our values are grounded in empathy,<br className="hidden sm:block" /> compassion, and personalized care.
-                  </h3>
+                  </h2>
                   <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                     We prioritize building meaningful relationships with our patients, their families, their doctors and anyone involved in their care. Taking the time to understand their unique medical history, lifestyle, and personal goals. Our commitment to active listening and deep understanding ensures that each patient receives a care plan tailored to their specific needs and preferences.
                   </p>
@@ -134,7 +143,7 @@ export default function About() {
                   {/* Vision */}
                   <div>
                                          <div className="flex items-center mb-3 sm:mb-4">
-                       <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3" />
+                       <Eye className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3" aria-hidden="true" />
                        <h3 className="text-xl sm:text-2xl font-bold text-[#17224D]">Vision</h3>
                      </div>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
@@ -145,7 +154,7 @@ export default function About() {
                   {/* Mission */}
                   <div>
                                          <div className="flex items-center mb-3 sm:mb-4">
-                       <Handshake className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3" />
+                       <Handshake className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3" aria-hidden="true" />
                        <h3 className="text-xl sm:text-2xl font-bold text-[#17224D]">Mission</h3>
                      </div>
                     <p className="text-sm sm:text-base text-gray-700 leading-relaxed">

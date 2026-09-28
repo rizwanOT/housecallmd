@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Pause, Play } from 'lucide-react';
 
 const PartnersAndSocial = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const insuranceCompanies = [
     {
@@ -60,14 +61,22 @@ const PartnersAndSocial = () => {
     return 20; // Default for SSR
   };
 
-  // Auto-advance slides every 4 seconds
+  // Auto-advance slides every 4 seconds, unless paused or the user prefers reduced motion
   useEffect(() => {
+    if (isPaused) return;
+
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       nextSlide();
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [currentSlide, isPaused]);
 
   return (
     <section className="bg-white pt-16">
@@ -84,7 +93,16 @@ const PartnersAndSocial = () => {
           
           {/* Insurance Logos Carousel */}
           <div className="relative max-w-6xl mx-auto overflow-hidden">
-            <div 
+            <div className="flex justify-center mb-2">
+              <button
+                onClick={() => setIsPaused((prev) => !prev)}
+                className="p-1.5 rounded-full text-[#17224D] hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-700"
+                aria-label={isPaused ? 'Play automatic partner logo rotation' : 'Pause automatic partner logo rotation'}
+              >
+                {isPaused ? <Play className="w-4 h-4" aria-hidden="true" /> : <Pause className="w-4 h-4" aria-hidden="true" />}
+              </button>
+            </div>
+            <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * getSlideOffset()}%)` }}
             >
@@ -116,7 +134,7 @@ const PartnersAndSocial = () => {
           <div className="absolute inset-0 z-0 mx-auto max-w-4xl h-full">
             <Image
               src="/assets/11/Memphis_bg.png"
-              alt="Memphis background pattern"
+              alt=""
               fill
               className="object-contain"
               sizes="(max-width: 768px) 100vw, 896px"
@@ -125,40 +143,46 @@ const PartnersAndSocial = () => {
           
           {/* Content */}
           <div className="relative z-10">
-            <h3 className="text-sm font-semibold text-green-500 uppercase tracking-widest mb-2">
+            <p className="text-sm font-semibold text-green-700 uppercase tracking-widest mb-2">
               GET CONNECTED
-            </h3>
+            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#17224D] mb-8">
               Follow our Social Media
             </h2>
-            
+
             {/* Social Media Icons */}
             <div className="flex justify-center space-x-6">
               {/* Facebook */}
-              <a 
-                href="#" 
-                className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                aria-label="Follow us on Facebook"
+              <a
+                href="https://facebook.com/housecallmd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                aria-label="Follow HouseCall MD on Facebook (opens in a new tab)"
               >
-                <Facebook className="w-6 h-6 text-white" />
+                <Facebook className="w-6 h-6 text-white" aria-hidden="true" />
               </a>
-              
+
               {/* Instagram */}
-              <a 
-                href="#" 
-                className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                aria-label="Follow us on Instagram"
+              <a
+                href="https://instagram.com/housecallmd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                aria-label="Follow HouseCall MD on Instagram (opens in a new tab)"
               >
-                <Instagram className="w-6 h-6 text-white" />
+                <Instagram className="w-6 h-6 text-white" aria-hidden="true" />
               </a>
-              
+
               {/* LinkedIn */}
-              <a 
-                href="#" 
-                className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors duration-200"
-                aria-label="Follow us on LinkedIn"
+              <a
+                href="https://linkedin.com/company/housecallmd"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-green-700 focus:ring-offset-2 transition-colors duration-200"
+                aria-label="Follow HouseCall MD on LinkedIn (opens in a new tab)"
               >
-                <Linkedin className="w-6 h-6 text-white" />
+                <Linkedin className="w-6 h-6 text-white" aria-hidden="true" />
               </a>
             </div>
           </div>
